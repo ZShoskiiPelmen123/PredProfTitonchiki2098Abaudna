@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка на ремонт</title>
+    <link href="{{ url_for ('static', filename='css/user.css') }}" rel="stylesheet">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+    <body>
+        <main>
+            <h2>Доступный инвентарь</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Количество</th>
+                        <th>Состояние</th>
+
+                    </tr>
+                </thead>
+                <tbody id="inventoryTableBody">
+{% for object in objects %}
+        <tr data-objectid={{object.id}}>
+            <td>{{object.name}}</td>
+            <td>{{object.amount}}</td>
+            <td>{{object.status}}</td>
+        </tr>
+        {% endfor %}
+                </tbody>
+            </table>
+        </main>
+</head>
+</body>
+

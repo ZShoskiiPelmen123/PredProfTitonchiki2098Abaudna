@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="{{ url_for ('static', filename='css/order.css') }}">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+ <header>
+        <h1>Заказ инвентаря</h1>
+    </header>
+ <form id="purchase-form">
+        <label for="item-name">Товар:</label>
+        <input type="text" id="item-name" required>
+
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" required>
+
+      <button type="submit">Запросить</button>
+ </form>
+</body>
+</html>

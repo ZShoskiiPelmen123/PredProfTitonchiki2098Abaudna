@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвентарь</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/inventory.css') }}">
+    <script type="text/javascript" src="{{ url_for ('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+<body>
+    <form>
+        <input name="tovar_name" type="text" id="itemName" placeholder="Название товара">
+        <input name="number_name" type="number" id="itemQuantity" placeholder="Количество">
+        <select name="status_name" id="itemStatus">
+            <option value="">Состояние</option>
+            <option value="новый">новый</option>
+            <option value="используемый">используемый</option>
+            <option value="сломанный">сломанный</option>
+        </select>
+    </form>
+    <button class="shine-button" type=submit onclick="addItem()">Добавить товар</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th>Количество</th>
+                <th>Состояние</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody id="inventoryTableBody">
+        {% for object in objects %}
+        <tr data-objectid={{object.id}}>
+            <td>{{object.name}}</td>
+            <td>{{object.amount}}</td>
+            <td>{{object.status}}</td>
+            <td>
+                <button class="shine-button" onclick="editItem(this)">Редактировать</button>
+                <button class="shine-button delete-button" onclick="removeItem(this)">Удалить</button>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

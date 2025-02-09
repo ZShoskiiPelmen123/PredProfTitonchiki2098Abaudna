@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <link rel="stylesheet" href="{{ url_for ('static', filename='css/zakrep.css') }}">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+            <header><h1>Закрепление инвентаря за пользователями</h1></header>
+            <form id="assign-inventory-form">
+                <label for="assign-item-name">Название инвентаря:</label>
+                <input type="text" id="assign-item-name" required>
+
+                <label for="assign-user">Имя пользователя:</label>
+                <input type="text" id="assign-user" required>
+
+                <button type="submit">Закрепить за пользователем</button>
+            </form>
+</body>
+</html>

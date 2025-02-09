@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/othot.css') }}">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Создание отчета</h1>
+    </header>
+
+    <main>
+        <section id="admin-section">
+
+
+<!--            <h2>Закрепление инвентаря за пользователями</h2>-->
+<!--            <form id="assign-inventory-form">-->
+<!--                <label for="assign-item-name">Название инвентаря:</label>-->
+<!--                <input type="text" id="assign-item-name" required>-->
+
+<!--                <label for="assign-user">Имя пользователя:</label>-->
+<!--                <input type="text" id="assign-user" required>-->
+
+<!--                <button type="submit">Закрепить за пользователем</button>-->
+<!--            </form>-->
+
+<!--            <h2>Планирование закупок</h2>-->
+<!--            <form id="purchase-planning-form">-->
+<!--                <label for="purchase-item-name">Название инвентаря:</label>-->
+<!--                <input type="text" id="purchase-item-name" required>-->
+
+<!--                <label for="purchase-quantity">Количество:</label>-->
+<!--                <input type="number" id="purchase-quantity" required>-->
+
+<!--                <label for="purchase-price">Цена:</label>-->
+<!--                <input type="number" step="0.01" id="purchase-price" required>-->
+
+<!--                <label for="supplier-name">Поставщик:</label>-->
+<!--                <input type="text" id="supplier-name" required>-->
+
+<!--                <button type="submit">Добавить в план закупок</button>-->
+<!--            </form>-->
+
+
+            <form id="report-form">
+                <label for="report-date">Отчет по использованию инвентаря:</label>
+                <input type="text" id="report-date" required placeholder="Использование">
+
+
+                <select id="itemStatus">
+            <option value="">Сосотояние</option>
+            <option value="новый">новый</option>
+            <option value="используемый">используемый</option>
+            <option value="сломанный">сломанный</option>
+
+        </select>
+
+                <button type="submit">Создать отчет</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Инвентарное приложение</p>
+    </footer>
+</body>
+</html>

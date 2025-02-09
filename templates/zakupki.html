@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{{ url_for ('static', filename='css/zakrep.css') }}">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+            <header><h1>Планирование закупок</h1></header>
+            <form id="purchase-planning-form">
+                <label for="purchase-item-name">Название инвентаря:</label>
+                <input type="text" id="purchase-item-name" required>
+
+                <label for="purchase-quantity">Количество:</label>
+                <input type="number" id="purchase-quantity" required>
+
+                <label for="purchase-price">Цена:</label>
+                <input type="number" step="0.01" id="purchase-price" required>
+
+                <label for="supplier-name">Поставщик:</label>
+                <input type="text" id="supplier-name" required>
+
+                <button type="submit">Добавить в план закупок</button>
+            </form>
+</body>
+</html>

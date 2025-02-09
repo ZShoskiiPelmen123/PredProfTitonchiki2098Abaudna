@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-приложение</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+
+</head>
+<body>
+    <p>Наш сайт позволит как
+        ученикам, так и учителям следить
+        за состоянием спортивного инвентаря</p>
+
+<div id="app">
+    <button id="loginBtn">Войти</button>
+    <button id="registerBtn">Зарегистрироваться</button>
+</div>
+
+<!-- Выбор входа -->
+<div id="overlay" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeSelect">&times;</span>
+        <h2>Выберите роль</h2>
+        <button id="adminLoginBtn">Администратор</button>
+        <button id="userLoginBtn">Пользователь</button>
+    </div>
+</div>
+
+<!-- Вход администратора -->
+<div id="adminPanel" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeAdminPanel">&times;</span>
+        <h2>Вход Администратора</h2>
+        <input type="text" id="adminNickname" name="nickname" form="adminAuth" placeholder="Nickname" required>
+        <div class="error" id="adminNicknameError">Это поле обязательно для заполнения.</div>
+        <input type="password" id="adminPassword" name="password" form="adminAuth" placeholder="Password" required>
+        <div class="error" id="adminPasswordError">Это поле обязательно для заполнения.</div>
+        <input type="text" id="adminKey" name="key" form="adminAuth" placeholder="Key" required>
+        <div class="error" id="adminKeyError">Это поле обязательно для заполнения.</div>
+        <form action="/login?userTypeId=3" method="post" id="adminAuth">
+            <button id="adminSubmitBtn" type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+
+<!-- Вход пользователя -->
+<div id="userPanel" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeUserPanel">&times;</span>
+        <h2>Вход Пользователя</h2>
+        <input type="text" id="userNick" name="nickname" form="userAuth" placeholder="Nickname" required>
+        <div class="error" id="userNickError">Это поле обязательно для заполнения.</div>
+        <input type="password" id="userPassword" name="password" form="userAuth" placeholder="Password" required>
+        <div class="error" id="userPasswordError">Это поле обязательно для заполнения.</div>
+        <form action="/login?userTypeId=2" method="post" id="userAuth">
+            <button id="userSubmitBtn" type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+
+<!-- Регистрация -->
+<div id="registerOverlay" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterOverlay">&times;</span>
+        <h2>Регистрация</h2>
+        <button id="teacherRegisterBtn">Зарегистрироваться как Админ</button><br>
+        <button id="studentRegisterBtn">Зарегистрироваться как Пользователь</button>
+    </div>
+</div>
+
+<!-- Регистрация админа -->
+<div id="teacherPanel" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeTeacherPanel">&times;</span>
+        <h2>Регистрация Админа</h2>
+        <form action="/register?userTypeId=3" method="post">
+            <input type="text" id="teacherNick" name="nickname" placeholder="Nickname" required>
+            <div class="error" id="teacherNickError">Это поле обязательно для заполнения.</div>
+            <input type="text" id="teacherName" name="name" placeholder="Name" required>
+            <div class="error" id="teacherNameError">Это поле обязательно для заполнения.</div>
+            <input type="text" id="teacherLastname" name="lastname" placeholder="Lastname" required>
+            <div class="error" id="teacherLastnameError">Это поле обязательно для заполнения.</div>
+            <input type="password" id="teacherPassword" name="password" placeholder="Password" required>
+            <div class="error" id="teacherPasswordError">Это поле обязательно для заполнения.</div>
+            <input type="text" id="teacherKey" name="key" placeholder="Key" required>
+            <div class="error" id="teacherKeyError">Это поле обязательно для заполнения.</div>
+            <button id="teacherSubmitBtn" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+<!-- Регистрация учителя -->
+<div id="studentPanel" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeStudentPanel">&times;</span>
+        <h2>Регистрация Учителя</h2>
+        <form action="/register?userTypeId=2" method="post">
+            <input type="text" id="studentNick" name="nickname" placeholder="Nickname" required>
+            <div class="error" id="studentNickError">Это поле обязательно для заполнения.</div>
+            <input type="text" id="studentName" name="name" placeholder="Name" name="name" required>
+            <div class="error" id="studentNameError">Это поле обязательно для заполнения.</div>
+            <input type="text" id="studentLastname" name="lastname" placeholder="Lastname" required>
+            <div class="error" id="studentLastnameError">Это поле обязательно для заполнения.</div>
+            <input type="password" id="studentPassword" name="password" placeholder="Password" required>
+            <div class="error" id="studentPasswordError">Это поле обязательно для заполнения.</div>
+            <button id="studentSubmitBtn" type="submit">Зарегистрироваться</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

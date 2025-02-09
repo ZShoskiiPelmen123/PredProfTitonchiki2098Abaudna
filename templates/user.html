@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользовательский интерфейс</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/user.css') }}">
+    <script src="{{ url_for ('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+<header>
+        <h1>Учет спортивного инвентаря</h1>
+        <nav>
+            <button class="nav-button" onclick="location.href='/inventory_user'">Инвентарь</button>
+            <button class="nav-button" onclick="location.href='/order_user'">Заявка на получение инвентаря</button>
+            <button class="nav-button" onclick="location.href='/logout'">Выход</button>
+        </nav>
+    </header>
+    <main>
+
+</body>
+</html>
